@@ -138,7 +138,7 @@ if [ $DATADIR = $DATADIR_REMOTE ]; then  # mainnet
     nohup ./build/bin/erigon --datadir $DATADIR --private.api.addr=localhost:9090 --mine --mine.etherbase=0x588c86c0DE8dFeDF7009e87879827D8193953961 2>&1 | $(limit_lines "$LOGS_DIR/erigon.log" "$LOGS_DIR/_erigon.log" "50") &
 elif [ $DATADIR = $DATADIR_LOCAL ]; then
     echo "Starting Erigon on ropsten testnet..."
-    nohup ./build/bin/erigon --datadir $DATADIR --chain ropsten --private.api.addr=localhost:9090 --mine --mine.etherbase=0x588c86c0DE8dFeDF7009e87879827D8193953961 2>&1 | $(limit_lines "$LOGS_DIR/erigon.log" "$LOGS_DIR/_erigon.log" "50") &
+    nohup ./build/bin/erigon --datadir $DATADIR --chain ropsten --private.api.addr=localhost:9090 --mine --miner.etherbase=0x588c86c0DE8dFeDF7009e87879827D8193953961 2>&1 | $(limit_lines "$LOGS_DIR/erigon.log" "$LOGS_DIR/_erigon.log" "50") &
 fi
 
 
